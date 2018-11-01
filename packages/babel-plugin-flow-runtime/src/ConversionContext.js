@@ -220,6 +220,13 @@ export default class ConversionContext {
   }
 
   /**
+   * Get a named identifier from the library.
+   */
+  identifier (name: string): Node {
+    return t.identifier(`${this.libraryId}.${name}Symbol`);
+  }
+
+  /**
    * Get a named symbol from the library.
    */
   symbol (name: string): Node {

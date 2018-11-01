@@ -644,7 +644,7 @@ export default function transformVisitors (context: ConversionContext): Object {
         );
 
         const staticProp = t.classProperty(
-          context.symbol('TypeParameters'),
+          context.identifier('TypeParameters'),
           t.identifier(typeParametersSymbolUid)
         );
         staticProp.computed = true;
