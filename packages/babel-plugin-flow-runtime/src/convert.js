@@ -527,14 +527,8 @@ converters.NumberTypeAnnotation = (context: ConversionContext, {node}: NodePath)
   return context.call('number');
 };
 
-// BABEL7
-//converters.NumericLiteralTypeAnnotation = (context: ConversionContext, {node}: NodePath): Node => {
-//  return context.call('number', t.numericLiteral(node.value));
-//};
-
-// Duplicated for compatibility with flow-parser.
-converters.NumberLiteralTypeAnnotation = (context: ConversionContext, {node}: NodePath): Node => {
-  return context.call('number', t.numericLiteral(node.value));
+converters.NumericLiteralTypeAnnotation = (context: ConversionContext, {node}: NodePath): Node => {
+ return context.call('number', t.numericLiteral(node.value));
 };
 
 converters.BooleanTypeAnnotation = (context: ConversionContext, {node}: NodePath): Node => {
