@@ -689,8 +689,8 @@ export default function transformVisitors (context: ConversionContext): Object {
       const [constructor] = body.get('body').filter(
         item => item.node.kind === 'constructor'
       );
-      const typeParametersUid = t.identifier(context.getClassData(path, 'typeParametersUid'));
 
+      const typeParametersUid = t.identifier(context.getClassData(path, 'typeParametersUid') || '___NONE___');
 
       const thisTypeParameters = t.memberExpression(
         t.thisExpression(),
@@ -699,7 +699,6 @@ export default function transformVisitors (context: ConversionContext): Object {
       );
 
       const constructorBlock = constructor.get('body');
-
 
       if (path.has('superClass')) {
 
