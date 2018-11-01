@@ -526,7 +526,7 @@ export default function transformVisitors (context: ConversionContext): Object {
         path.skip();
         return;
       }
-      const fn = path.scope.getFunctionParent().path;
+      const fn = (path.scope.getFunctionParent() || path.scope.getProgramParent()).path;
       if (!shouldCheck || !fn.has('returnType')) {
         return;
       }
@@ -559,7 +559,7 @@ export default function transformVisitors (context: ConversionContext): Object {
         path.skip();
         return;
       }
-      const fn = path.scope.getFunctionParent().path;
+      const fn = (path.scope.getFunctionParent() || path.scope.getProgramParent()).path;
       if (!shouldCheck || !fn.has('returnType')) {
         return;
       }
