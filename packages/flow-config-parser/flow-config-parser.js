@@ -1,3 +1,3 @@
-var flowConfigParser = require('./src/flowConfigParser');
+var flowConfigParser = require('./lib/flowConfigParser');
 
 module.exports = flowConfigParser;

@@ -531,6 +531,11 @@ converters.NumericLiteralTypeAnnotation = (context: ConversionContext, {node}: N
  return context.call('number', t.numericLiteral(node.value));
 };
 
+// Duplicated for compatibility with flow-parser.
+converters.NumberLiteralTypeAnnotation = (context: ConversionContext, {node}: NodePath): Node => {
+  return t.stringLiteral('number');
+};
+
 converters.BooleanTypeAnnotation = (context: ConversionContext, {node}: NodePath): Node => {
   return context.call('boolean');
 };
